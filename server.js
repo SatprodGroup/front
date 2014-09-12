@@ -1,8 +1,15 @@
 #!/bin/env node
 //  OpenShift sample Node application
-var express = require('express');
+var express = require("express");
+var expapp = express();
 var fs      = require('fs');
 
+// Prerender
+expapp.use(require('prerender-node').set('prerenderToken', 'VK68MlYHBJFGQSjy8OPp'));
+
+expapp.use('/assets', express.static(__dirname + '/assets'));
+expapp.use('/partials', express.static(__dirname + '/partials'));
+expapp.use('/data', express.static(__dirname + '/data'));
 
 /**
  *  Define the sample application.
@@ -95,11 +102,6 @@ var SampleApp = function() {
     self.createRoutes = function() {
         self.routes = { };
 
-        self.routes['/asciimo'] = function(req, res) {
-            var link = "http://i.imgur.com/kmbjB.png";
-            res.send("<html><body><img src='" + link + "'></body></html>");
-        };
-
         self.routes['/'] = function(req, res) {
             res.setHeader('Content-Type', 'text/html');
             res.send(self.cache_get('index.html') );
@@ -113,7 +115,7 @@ var SampleApp = function() {
      */
     self.initializeServer = function() {
         self.createRoutes();
-        self.app = express.createServer();
+        self.app = expapp;
 
         //  Add handlers for the app (from the routes).
         for (var r in self.routes) {

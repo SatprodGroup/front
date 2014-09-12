@@ -1,0 +1,89 @@
+{
+    "main_title" : "<strong>Explore</strong> our projects",
+    "main_text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc vehicula lacinia. Proin adipiscing porta tellus, ut feugiat nibh adipiscing sit amet.",
+    "references_items" :
+        [
+            {
+                "title" : "Royal Tervuren Website",
+                "date" : "January 2014",
+                "picture" : "remote_lab.jpg",
+                "type" : "development",
+                "large_pictures" : 
+                [ 
+                    { "src":"remote_lab.jpg" },
+                    { "src":"remote_lab.jpg" },
+                    { "src":"remote_lab.jpg" },
+                    { "src":"remote_lab.jpg" },
+                    { "src":"remote_lab.jpg" },
+                    { "src":"remote_lab.jpg" },
+                    { "src":"remote_lab.jpg" },
+                    { "src":"remote_lab.jpg" }
+                ]
+            },{
+                "title" : "SAE Online",
+                "date" : "July 2013 >> January 2014",
+                "picture" : "remote_lab.jpg",
+                "type" : "development"
+            },{
+                "title" : "Home Mesh Network",
+                "date" : "Septembre 2013",
+                "picture" : "remote_lab.jpg",
+                "type" : "engineering"
+            },{
+                "title" : "Submission System",
+                "date" : "May 2013",
+                "picture" : "remote_lab.jpg",
+                "type" : "development"
+            },{
+                "title" : "Wax-Zone",
+                "date" : "Novembre 2013",
+                "picture" : "remote_lab.jpg",
+                "type" : "development"
+            },{
+                "title" : "Royal Tervuren Network",
+                "date" : "May 2014",
+                "picture" : "remote_lab.jpg",
+                "type" : "engineering"
+            },{
+                "title" : "Royal Tervuren Videophony",
+                "date" : "Augustus 2014",
+                "picture" : "remote_lab.jpg",
+                "type" : "engineering"
+            },{
+                "title" : "P.V.I. Network",
+                "date" : "February 2014",
+                "picture" : "remote_lab.jpg",
+                "type" : "engineering"
+            },{
+                "title" : "Royal Tervuren App",
+                "date" : "January 2014 >> April 2014",
+                "picture" : "remote_lab.jpg",
+                "type" : "development"
+            },{
+                "title" : "Syspeo",
+                "date" : "June 2014 >> Augustus 2014",
+                "picture" : "remote_lab.jpg",
+                "type" : "development"
+            },{
+                "title" : "Unbend Records Website",
+                "date" : "Augustus 2014",
+                "picture" : "remote_lab.jpg",
+                "type" : "development"
+            },{
+                "title" : "Unbend Records Studio",
+                "date" : "January 2014 >> October 2014",
+                "picture" : "remote_lab.jpg",
+                "type" : "engineering"
+            },{
+                "title" : "SG-Streamer",
+                "date" : "Augustus 2014 >> October 2014",
+                "picture" : "remote_lab.jpg",
+                "type" : "development"
+            },{
+                "title" : "Galaxy Studio Remote",
+                "date" : "July 2013",
+                "picture" : "remote_lab.jpg",
+                "type" : "engineering"
+            }
+        ]
+}
