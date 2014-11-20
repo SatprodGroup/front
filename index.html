@@ -1,11 +1,11 @@
 <!DOCTYPE html ng-app="app">
 <!--[if IE 8]>          <html class="ie ie8" ng-app="app"> <![endif]-->
 <!--[if IE 9]>          <html class="ie ie9" ng-app="app"> <![endif]-->
-<!--[if gt IE 9]><!-->  <html ng-app="app"> <!--<![endif]-->
+<!--[if gt IE 9]><!-->  <html data-ng-app="app"> <!--<![endif]-->
 
     <head>
         <meta charset="utf-8" />
-        <title ng-bind="header+' | Satprod Group'">Satprod Group</title>
+        <title data-ng-bind="header+' | Satprod Group'">Satprod Group</title>
         <meta name="keywords" content="satprod,development,dévelopement,web," />
         <meta name="description" content="" />
         <meta name="Author" content="Louis Borsu" />
@@ -107,7 +107,7 @@
         <span id="header_shadow"></span>
         <!-- /TOP NAV -->
 
-        <section class="view view-fade angular-animate" ng-view>
+        <section class="view view-fade angular-animate" data-ng-view>
         </section>
 
         <!-- FOOTER -->
@@ -121,75 +121,6 @@
             </div>
             <!-- copyright , scrollTo Top -->
 
-
-            <!-- footer content -->
-            <div class="footer-content">
-                <div class="container">
-
-                    <div class="row">
-
-
-                        <!-- FOOTER CONTACT INFO -->
-                        <div class="column col-md-6">
-                            <h3>CONTACT</h3>
-
-                            <p class="contact-desc">
-                                If you need any informations, please be welcome to contact us.                                      
-                            </p>
-                            <address class="font-opensans">
-                                <ul>
-                                    <li class="footer-sprite address">
-                                        4, Rue des pères blancs<br />
-                                        1040 Brussels<br />
-                                        Belgium
-                                    </li>
-                                    <li class="footer-sprite phone">
-                                        Phone: +32 (0) 2 318 34 51
-                                    </li>
-                                    <li class="footer-sprite email">
-                                        <a href="contactus.html">info@satprod.net</a>
-                                    </li>
-                                </ul>
-                            </address>
-
-                        </div>
-                        <!-- /FOOTER CONTACT INFO -->
-
-
-                        <!-- FOOTER LATEST POSTS -->
-                        <div class="column col-md-6 text-right">
-                            <h3>Newsletter</h3>
-<!--                             <form class="white-row" action="php/contact.php" method="post">
-                                    <div class="form-group">
-                                        <div class="col-md-10">
-                                            <label>Full Name *</label>
-                                            <input type="text" value="" data-msg-required="Please enter your name." maxlength="100" class="form-control" name="name" id="name">
-                                        </div>
-                                        <br />
-                                        <div class="col-md-10">
-                                            <label>E-mail Address *</label>
-                                            <input type="email" value="" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control" name="email" id="email">
-                                        </div>
-                                    </div>
-
-                                <br />
-
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <input type="submit" value="Send Message" class="btn btn-primary btn-lg" data-loading-text="Loading...">
-                                    </div>
-                                </div>
-                            </form> -->
-
-                        </div>
-                        <!-- /FOOTER LATEST POSTS -->
-
-                    </div>
-
-                </div>
-            </div>
-            <!-- footer content -->
-
         </footer>
         <!-- /FOOTER -->
 
@@ -201,5 +132,7 @@
         <script src="./assets/plugins/angular/angular-sanitize.min.js"></script>
         <script src="./assets/js/angular_scripts/app.js"></script>
         <script src="./assets/js/angular_scripts/controller/ReferencesCtrl.js"></script>
+        <script src="./assets/js/angular_scripts/controller/UniqueReferenceCtrl.js"></script>
+        
     </body>
 </html>
