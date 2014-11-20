@@ -13,12 +13,16 @@ app.config(function($routeProvider, $httpProvider){
         .when('/engineering', {templateUrl: 'partials/engineering.html', controller: EngineeringCtrl})
         .when('/development', {templateUrl: 'partials/development.html', controller: DevelopmentCtrl})
         .when('/contact', {templateUrl: 'partials/contact.html', controller: ContactCtrl})
-        .otherwise({redirectTo: '/'});
+        .otherwise({redirectTo: '/#!'});
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
     delete $httpProvider.defaults.headers.common['Content-Type'];
     delete $httpProvider.defaults.headers.common['Accept-Ranges'];
 
 });
+
+app.config(['$locationProvider', function($locationProvider) {
+    $locationProvider.hashPrefix('!');
+}]);
 
 
 function HomeCtrl($rootScope, $http) { 
