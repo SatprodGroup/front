@@ -1,7 +1,7 @@
-<!DOCTYPE html data-ng-app="app">
-<!--[if IE 8]>          <html class="ie ie8" data-ng-app="app"> <![endif]-->
-<!--[if IE 9]>          <html class="ie ie9" data-ng-app="app"> <![endif]-->
-<!--[if gt IE 9]><!-->  <html data-ng-app="app"> <!--<![endif]-->
+<!DOCTYPE html data-ng-app="app" ng-controller="SEOCtrl">
+<!--[if IE 8]>          <html class="ie ie8" data-ng-app="app" ng-controller="SEOCtrl"> <![endif]-->
+<!--[if IE 9]>          <html class="ie ie9" data-ng-app="app" ng-controller="SEOCtrl"> <![endif]-->
+<!--[if gt IE 9]><!-->  <html data-ng-app="app" ng-controller="SEOCtrl"> <!--<![endif]-->
 
     <head>
         <meta charset="utf-8" />
@@ -9,8 +9,21 @@
 
         <!-- SEO -->
         <meta name="keywords" content="satprod,development,dévelopement,web," />
-        <meta name="description" content="" />
-        <meta name="Author" content="Louis Borsu" />
+        <meta name="description" content="{{description}}" />
+        <meta name="author" content="Louis Borsu">
+        <link rel="author" href="https://plus.google.com/+LouisBorsu"/>
+        <link rel="publisher" href="https://plus.google.com/+LouisBorsu" />
+        <meta property="og:title" content="{{header}} | Satprod Group"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="{{url}}"/>
+        <meta property="og:image" content="{{image_url}}"/>
+        <meta property="og:description" content="{{description}}"/>
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@satblip">
+        <meta name="twitter:url" content="{{url}}">
+        <meta name="twitter:title" content="{{header}} | Satprod Group">
+        <meta name="twitter:description" content="{{description}}">
+        <meta name="twitter:image" content="{{image_url}}">
 
         <!-- mobile settings -->
         <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
@@ -63,7 +76,7 @@
                 </button>
 
                 <!-- Logo text or image -->
-                <a class="logo" href="./#!/">
+                <a ng-click="navHome()" class="logo" href="./#!/">
                     <img id="logo-on-the-top" class="logo-top" src="./assets/images/logo.png" alt="satprod" />
                 </a>
 
@@ -72,28 +85,28 @@
                     <nav class="nav-main mega-menu">
                         <ul class="nav nav-pills nav-main scroll-menu" id="topMain">
                             <li ng-class="{active:header == 'The Company'}">
-                                <a href="./#!/company">
+                                <a ng-click="navCompany()" href="./#!/company">
                                     The company
                                 </a>
                             </li>
                             <li ng-class="{active:header == 'References'}">
-                                <a href="./#!/references">
+                                <a ng-click="navReferences()" href="./#!/references">
                                     References
                                 </a>
                             </li>
                             <li ng-class="{active:header == 'Engineering'}">
-                                <a href="./#!/engineering">
+                                <a ng-click="navEngineering()" href="./#!/engineering">
                                     Engineering
                                 </a>
                             </li>
                             <li ng-class="{active:header == 'Development'}">
-                                <a href="./#!/development">
+                                <a ng-click="navDevelopment()" href="./#!/development">
                                     Development
                                 </a>
                             </li>
 
                             <li ng-class="{active:header == 'Contact'}">
-                                <a href="./#!/contact">
+                                <a ng-click="navContact()" href="./#!/contact">
                                     Contact us
                                 </a>
                             </li>
@@ -135,6 +148,7 @@
         <script src="./assets/js/angular_scripts/app.js"></script>
         <script src="./assets/js/angular_scripts/controller/ReferencesCtrl.js"></script>
         <script src="./assets/js/angular_scripts/controller/UniqueReferenceCtrl.js"></script>
+        <script src="./assets/js/angular_scripts/controller/SEOCtrl.js"></script>
         
     </body>
 </html>
