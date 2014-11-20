@@ -1,23 +1,19 @@
 {
-  "name": "OpenShift-Sample-App",
+  "name": "Satprod Website",
   "version": "1.0.0",
-  "description": "OpenShift Sample Application",
+  "description": "Satprod Group Front Website",
   "keywords": [
-    "OpenShift",
+    "Satprod Group",
     "Node.js",
     "application",
     "openshift"
   ],
   "author": {
-    "name": "OpenShift",
-    "email": "ramr@example.org",
-    "url": "http://www.openshift.com/"
+    "name": "Louis Borsu",
+    "email": "sat@satprod.net",
+    "url": "http://www.satpord.net/"
   },
-  "homepage": "http://www.openshift.com/",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/openshift/origin-server"
-  },
+  "homepage": "http://www.satpord.net/",
   "engines": {
     "node": ">= 0.6.0",
     "npm": ">= 1.0.0"

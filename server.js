@@ -4,7 +4,9 @@ var express = require("express");
 var expapp = express();
 var fs      = require('fs');
 
-// Prerender
+/**
+ *  Prerender
+ */
 expapp.use(require('prerender-node').set('prerenderToken', 'VK68MlYHBJFGQSjy8OPp'));
 
 expapp.use('/assets', express.static(__dirname + '/assets'));
@@ -12,7 +14,18 @@ expapp.use('/partials', express.static(__dirname + '/partials'));
 expapp.use('/data', express.static(__dirname + '/data'));
 
 /**
- *  Define the sample application.
+ *  Force HTTPS
+ */
+function redirectSec(req, res, next) {
+        if (req.headers['x-forwarded-proto'] == 'http') { 
+            res.redirect('https://' + req.headers.host + req.path);
+        } else {
+            return next();
+        }
+    }
+
+/**
+ *  Define the application.
  */
 var SampleApp = function() {
 
@@ -119,7 +132,7 @@ var SampleApp = function() {
 
         //  Add handlers for the app (from the routes).
         for (var r in self.routes) {
-            self.app.get(r, self.routes[r]);
+            self.app.get(r, redirectSec, self.routes[r]);
         }
     };
 
@@ -149,8 +162,6 @@ var SampleApp = function() {
     };
 
 };   /*  Sample Application.  */
-
-
 
 /**
  *  main():  Main code.
