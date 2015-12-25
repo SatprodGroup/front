@@ -26,7 +26,13 @@ app.set('views', path.join(__dirname, '/src/views'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ reviver: true }));
-app.use(express.static(path.join(__dirname, './src/static')));
+
+var oneDay = 86400000;
+app.use(express.static(path.join(__dirname, './src/static'), {
+  maxAge: oneDay,
+  lastModified: true,
+  etag: true
+}));
 app.use(prerender.set('prerenderToken', config.prerender.token));
 app.use(favicon(__dirname + '/src/static/assets/images/favicon.ico'));
 
