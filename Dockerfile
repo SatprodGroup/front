@@ -1,4 +1,4 @@
-FROM node:0.10.40
+FROM mhart/alpine-node:0.10.40
 
 ENV APP_NAME satprod-app
 

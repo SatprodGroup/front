@@ -12,9 +12,6 @@ module.exports = {
   socialMedia: {
     twitter: '@satprodgroup'
   },
-  abm: {
-    baseUrl: 'https://satprod.net/'
-  },
   postmark: {
     key: env.postmark_api_key
   },

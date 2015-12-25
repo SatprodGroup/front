@@ -8,11 +8,8 @@ var favicon = require('serve-favicon');
 var path = require('path');
 var prerender = require('prerender-node');
 
-/**
- *  Prerender
- */
-
-var logger = require('./src/resources/logger');
+var logger = require('./src/resources/logger')
+  .create({ module: 'server' });
 
 var root = require('./src/routes/root');
 var sitemap = require('./src/routes/sitemap');
@@ -66,9 +63,9 @@ app.get('/*', function (req, res, next) {
 /*
   Logger
  */
-logger.info({
+logger.info('server-starting', {
   config: config,
-  state: 'starting server...'
+  env: process.env
 });
 
 /*
@@ -76,9 +73,8 @@ logger.info({
  */
 var http = app.listen(config.httpPort, function () {
   var port = http.address().port;
-  logger.info({
-    port: port,
-    state: 'http server started!'
+  logger.info('server-started', {
+    port: port
   });
 });
 

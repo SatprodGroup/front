@@ -1,6 +1,7 @@
 'use strict';
 
-var logger = require('../../resources/logger');
+var logger = require('../../resources/logger')
+  .create({ module: 'errorsHandler' });
 
 /**
  * Errors Handler
@@ -14,15 +15,11 @@ function createErrorMessage (err) {
   if (err.message) {
     errorMessage = err.message;
 
-    logger.info({
-      error: err.inner || err
-    });
+    logger.error('response-error', err);
   } else {
     errorMessage = err;
 
-    logger.info({
-      error: err.inner || err
-    });
+    logger.error('response-error', err);
   }
 
   return {
