@@ -43,30 +43,6 @@ app.use('/api/references', apiReferences);
 app.use('/', root);
 
 /*
-  WWW to now-WWW
- */
-app.get('/*', function (req, res, next) {
-  if (req.headers.host.match(/^www/) !== null) {
-    res.redirect(301, 'http://' + req.headers.host.replace(/^www\./, '') + req.url);
-  } else {
-    next();
-  }
-});
-
-/**
- *  Force HTTPS
- */
-if (!process.env.LOCAL_DEV) {
-  app.get('/*', function (req, res, next) {
-    if (req.headers['x-forwarded-proto'] === 'http') {
-      res.redirect(301, 'https://' + req.headers.host + req.path);
-    } else {
-      next();
-    }
-  });
-}
-
-/*
   Logger
  */
 logger.info('server-starting', {
