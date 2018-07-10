@@ -5,7 +5,7 @@ var router = express.Router();
 
 router.get('/*',function(req,res,next){
   if (!process.env.LOCAL_DEV) {
-    res.header('Content-Security-Policy' , 'default-src https://satprod.net:443');
+    res.header('Content-Security-Policy' , 'default-src \'self\' data: gap: https://ssl.gstatic.com \'unsafe-eval\'; style-src \'self\' https://fonts.googleapis.com \'unsafe-inline\';script-src \'self\' http://onlineerp.solution.quebec \'unsafe-inline\' \'unsafe-eval\'; font-src \'self\' https://fonts.googleapis.com https://fonts.gstatic.com');
     res.header('Referrer-Policy' , 'same-origin');
     res.header('X-Frame-Options' , 'SAMEORIGIN');
     res.header('X-Xss-Protection' , '1; mode=block');

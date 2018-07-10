@@ -11,12 +11,10 @@ app.factory('SendMessage', function ($http, $q) {
         url: '/api/sendemail',
         method: 'POST',
         data: data
-      })
-      .success(function (data, status, headers, config) {
-        messageReturn.messageReturn = data;
+      }).then(function successCallback(response) {
+        messageReturn.messageReturn = response;
         deferred.resolve(messageReturn.messageReturn);
-      })
-      .error(function (data, status, headers, config) {
+      }, function errorCallback(response) {
         deferred.reject('Network Problem!!');
       });
       return deferred.promise;
