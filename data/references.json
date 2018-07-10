@@ -1,6 +1,6 @@
 {
-  "main_title": "<strong>Explore</strong> our projects",
-  "main_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc vehicula lacinia. Proin adipiscing porta tellus, ut feugiat nibh adipiscing sit amet.",
+  "main_title": "<strong>Explore</strong> our references",
+  "main_text": "Here you can find a list of few of our references. Do not heisitate to browse and dicover how we did to drive the projet to the end!",
   "references_items": [
     {
       "title": "Royal Tervuren Website",
@@ -498,6 +498,7 @@
     {
       "title": "Galaxy Studio Remote",
       "slug": "galaxy-studio-remote",
+      "customer": "Galaxy Studio",
       "date": "July 2013",
       "picture": "galaxy-remote-2.jpg",
       "type": "engineering",

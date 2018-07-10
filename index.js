@@ -6,7 +6,6 @@ var config = require('config');
 var express = require('express');
 var favicon = require('serve-favicon');
 var path = require('path');
-var prerender = require('prerender-node');
 
 var logger = require('./src/resources/logger')
   .create({ module: 'server' });
@@ -33,7 +32,6 @@ app.use(express.static(path.join(__dirname, './src/static'), {
   lastModified: true,
   etag: true
 }));
-app.use(prerender.set('prerenderToken', config.prerender.token));
 app.use(favicon(__dirname + '/src/static/assets/images/favicon.ico'));
 
 /*
@@ -58,13 +56,15 @@ app.get('/*', function (req, res, next) {
 /**
  *  Force HTTPS
  */
-app.get('/*', function (req, res, next) {
-  if (req.headers['x-forwarded-proto'] === 'http') {
-    res.redirect(301, 'https://' + req.headers.host + req.path);
-  } else {
-    next();
-  }
-});
+if (!process.env.LOCAL_DEV) {
+  app.get('/*', function (req, res, next) {
+    if (req.headers['x-forwarded-proto'] === 'http') {
+      res.redirect(301, 'https://' + req.headers.host + req.path);
+    } else {
+      next();
+    }
+  });
+}
 
 /*
   Logger
@@ -83,4 +83,3 @@ var http = app.listen(config.httpPort, function () {
     port: port
   });
 });
-

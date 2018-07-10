@@ -1,9 +1,9 @@
 {
   "name": "SatprodWebsite",
   "version": "1.0.0",
-  "description": "Satprod Group Front Website",
+  "description": "Satprod Front Website",
   "keywords": [
-    "Satprod Group"
+    "Satprod"
   ],
   "scripts": {
     "start": "node index.js",

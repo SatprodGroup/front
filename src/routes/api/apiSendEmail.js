@@ -17,7 +17,7 @@ router.post('/', function (req, res) {
   var tag = req.body.tag;
 
   var mailOptions = {
-    From: 'Satprod Group <info@satprod.net>',
+    From: 'Satprod <info@satprod.net>',
     To: 'info@satprod.net',
     replyTo: email,
     Subject: name + ' leaves you a message',
