@@ -24,18 +24,8 @@ router.get('/', function (req, res) {
     });
 
     sm.add({
-      url : 'http://www.unbend.be/discography',
-      changefreq :'daily'
-    });
-
-    sm.add({
-      url : 'http://www.unbend.be/studio',
-      changefreq :'monthly'
-    });
-
-    sm.add({
-      url : 'http://www.unbend.be/contact',
-      changefreq :'monthly'
+      url: 'https://satprod.net/contact',
+      changefreq: 'monthly'
     });
 
     sm.toXML(function (xml) {
