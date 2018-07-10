@@ -5,7 +5,7 @@ var router = express.Router();
 
 router.get('/*',function(req,res,next){
   if (!process.env.LOCAL_DEV) {
-    res.header('Content-Security-Policy' , 'Content-Security-Policy: default-src https://satprod.net:443');
+    res.header('Content-Security-Policy' , 'default-src https://satprod.net:443');
     res.header('Referrer-Policy' , 'same-origin');
     res.header('X-Frame-Options' , 'SAMEORIGIN');
     res.header('X-Xss-Protection' , '1; mode=block');
