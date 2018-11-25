@@ -8,13 +8,13 @@ app.factory('SendMessage', function ($http, $q) {
       var deferred = $q.defer();
 
       $http({
-        url: '/api/sendemail',
+        url: 'https://aspfbgp8j3.execute-api.eu-west-1.amazonaws.com/dev/message',
         method: 'POST',
         data: data
-      }).then(function successCallback(response) {
+      }).then(function successCallback (response) {
         messageReturn.messageReturn = response;
         deferred.resolve(messageReturn.messageReturn);
-      }, function errorCallback(response) {
+      }, function errorCallback (response) {
         deferred.reject('Network Problem!!');
       });
       return deferred.promise;
