@@ -10,7 +10,7 @@ var path = localStorage.getItem('path');
 if(path) {
   console.log(path);
   localStorage.removeItem('path');
-  window.location = window.location + '/' + path;
+  window.location.href = '/' + path;
 }
 
 app.config(function ($animateProvider) {
