@@ -6,6 +6,13 @@ var app = angular.module('app', [
   'ngSanitize'
 ]);
 
+var path = localStorage.getItem('path');
+if(path) {
+  console.log(path);
+  localStorage.removeItem('path');
+  window.location = window.location + '/' + path;
+}
+
 app.config(function ($animateProvider) {
   $animateProvider.classNameFilter(/angular-animate/);
 });
@@ -15,13 +22,6 @@ app.config(['$locationProvider', function ($locationProvider) {
 }]);
 
 app.config(function ($routeProvider, $httpProvider) {
-  var path = localStorage.getItem('path');
-  if(path) {
-    console.log(path);
-    localStorage.removeItem('path');
-    $routeProvider.navigate([path]);
-  }
-  
   $routeProvider
     .when('/', {templateUrl: '/partials/home.html', controller: HomeCtrl})
     .when('/company', {templateUrl: '/partials/company.html', controller: CompanyCtrl})
