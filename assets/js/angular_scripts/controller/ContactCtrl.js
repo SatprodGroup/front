@@ -8,7 +8,7 @@ app.factory('SendMessage', function ($http, $q) {
       var deferred = $q.defer();
 
       $http({
-        url: 'https://aspfbgp8j3.execute-api.eu-west-1.amazonaws.com/dev/message',
+        url: 'https://1pwl37dw95.execute-api.eu-west-1.amazonaws.com/PROD',
         method: 'POST',
         data: data
       }).then(function successCallback (response) {
