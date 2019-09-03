@@ -15,8 +15,9 @@ app.config(['$locationProvider', function ($locationProvider) {
 }]);
 
 app.config(function ($routeProvider, $httpProvider) {
-  let path = localStorage.getItem('path');
+  var path = localStorage.getItem('path');
   if(path) {
+    console.log(path);
     localStorage.removeItem('path');
     $routeProvider.navigate([path]);
   }
